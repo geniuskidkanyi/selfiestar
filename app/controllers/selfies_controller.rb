@@ -1,4 +1,11 @@
 class SelfiesController < ApplicationController
+    impressionist actions: [:show], unique: [:session_hash]
+
+    def show
+        @selfie = Selfie.find(params[:id])
+        render js
+    end
+
     def create
         @selfie = Selfie.create(selfie_params)
         @selfie.user_id = current_user.id
@@ -14,7 +21,7 @@ class SelfiesController < ApplicationController
     end
 
     def update
-        @selfie = Selfie.find_by(params[i: id])
+        @selfie = Selfie.find_by(params[:id])
         respond_to do |format|
             if @selfie.save
                 format.html { redirect_to root_path, notice: 'selfie was successfully created.' }
@@ -26,11 +33,9 @@ class SelfiesController < ApplicationController
         end
   end
 
-
-
     protected
 
     def selfie_params
-      params.require(:selfie).permit(:title, :photo)
+        params.require(:selfie).permit(:title, :photo)
     end
 end

@@ -1,8 +1,8 @@
 <% @selfies.each do |selfie| %>
 <div class="card">
 
-<div class="card-main">
-    <a class="show_lightbox" href="#">
+<div class="card-main" >
+    <a class="show_lightbox" data-selfie-id="<%= selfie.id %>" href="<%= selfie.photo.url %>">
         <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
 
 
