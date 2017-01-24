@@ -1,0 +1,77 @@
+.footer {
+    background-color: $brand;
+    color: $white;
+    padding: 48px 0;
+    h4 {
+        font-size: 24px;
+        margin: 0 0 16px;
+    }
+    &_logo {
+        width: 28px;
+        height: 28px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        &:before {
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform:translate3d(-50%,-50%,0);
+            text-indent: 0px;
+            content: "\f083";
+            font-family: FontAwesome;
+            font-size: 24px;
+          }
+    }
+
+    &_container {
+        display: flex;
+        flex-flow: row wrap;
+        max-width: $full-screen;
+        margin: 0 auto;
+    }
+
+    &_section {
+        margin: 0 8px;
+        width: calc(100% - 16px);
+        @include at-least($tablet) {
+            width: calc(50% - 16px);
+        }
+        @include at-least($desktop) {
+            width: calc(25% - 16px);
+        }
+    }
+
+    &_menu {
+        list-style-type: none;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .masthead {
+        text-align: center;
+
+        &_section {
+            list-style-type: none;
+            padding:0;
+            margin: 16px 0;
+            font-size: 16px;
+            line-height: 32px;
+            font-weight: 400;
+        }
+    }
+
+    .partner-grid {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .partner {
+        width: calc(50% - 8px);
+        align-self: flex-start;
+        margin: 0 4px;
+    }
+}

@@ -1,0 +1,27 @@
+<% @selfies.each do |selfie| %>
+<div class="card">
+
+<div class="card-main">
+    <a class="show_lightbox" href="#">
+        <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
+
+
+    </a>
+
+    <button class="like">like</button><!-- add class liked for image like by current user -->
+</div><!-- .card-main -->
+    <div class="card-footer">
+        <div class="card-footer-avatar">
+            <img class="card-footer-avater-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="avatar" />
+        </div><!-- .card-footer-avater -->
+        <div class="card-footer-text">
+            <a href="#" class="card-footer-title"><%= selfie.user.email %></a>
+            <div class="card-footer-info">
+                <a href="like?id={{ $photo->id }}" class="card-footer-likes">{{ $photo->likes }}</a>
+                <a href="#" class="card-footer-views">{{ $photo->views }}</a>
+            </div><!-- .card-footer-info -->
+
+        </div><!-- .card-footer-text -->
+    </div><!-- .card-footer -->
+</div><!-- .card -->
+<% end %>

@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Selfiestar</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Selfiestar</title>
+        <%= csrf_meta_tags %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <body>
+        <header class="header">
+            <div class="header-container">
+                <a href="/" class="logo">SelfieStar</a>
+                <ul class="menu">
+                    <li>
+                        <a class="upload_link" href="upload">Upload</a>
+                    </li>
+                    <% if user_signed_in? %>
+                    <li>
+                        <a class="profile_link" href="profile">Profile</a>
+                    </li>
+                    <li>
+                      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "signout_link" %>
 
-  <body>
-    <%= yield %>
-  </body>
+                    </li>.destroy_user_session_path, method: :delete.destroy_user_session_path, method: :delete
+                <% else %>
+
+                    <li><%= link_to "Sign Up", new_user_registration_path, class: "signup_link" %></li>
+                    <li><%= link_to "Sign In", new_user_session_path, class: "signin_link" %></li>
+                    <% end %>
+
+                </ul>
+            </div>
+
+        </header>
+        <main class="main">
+            <%= yield %>
+        </main>
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="footer_section">
+                    <h4>SelfieStar</h4>
+                    <ul class="footer_menu">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/terms">Terms and Conditions</a></li>
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li><a href="/sitemap">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="footer_section">
+                    <h4>SocialStar</h4>
+                    <ul class="footer_menu">
+                        <li><a href="#facebook">Facebook</a></li>
+                        <li><a href="#instagram">Instagram</a></li>
+                        <li><a href="#snapchat">Snapchat</a></li>
+                        <li><a href="#twitter">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer_section">
+                    <div class="partner-grid">
+                        <img class="partner" src="photos/afripay.jpg" alt="afripay">
+                        <img class="partner" src="photos/qodoo.png" alt="qodoo">
+                    </div>
+                </div>
+                <div class="footer_section">
+                    <div class="masthead">
+                        <a class="footer_logo" href="/"></a>
+                        <ul class="masthead_section">
+                            <li>Copyright &copy; 2016</li>
+                            <li>SelfieStar</li>
+                        </ul>
+                        <ul class="masthead_section">
+                            <li>Made in the Gambia</li>
+                            <li>Powered by <a href="https://www.gcubed.gm">GCubed</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
