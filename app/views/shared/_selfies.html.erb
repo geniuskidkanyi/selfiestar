@@ -7,8 +7,10 @@
 
 
     </a>
-
-    <button class="like">like</button><!-- add class liked for image like by current user -->
+    <div id="<%= selfie.id%>_likes">
+          <%= render  partial: "selfies/likes/likes", locals: { selfie: selfie} %>
+    </div>
+  <!-- add class liked for image like by current user -->
 </div><!-- .card-main -->
     <div class="card-footer">
         <div class="card-footer-avatar">
@@ -17,7 +19,9 @@
         <div class="card-footer-text">
             <a href="#" class="card-footer-title"><%= selfie.user.email %></a>
             <div class="card-footer-info">
-                <a href="like?id={{ $photo->id }}" class="card-footer-likes">{{ $photo->likes }}</a>
+
+
+                <div class="card-footer-likes" id="<%= selfie.id %>_counter"><%= selfie.likes.count %></div>
                 <a href="#" class="card-footer-views">{{ $photo->views }}</a>
             </div><!-- .card-footer-info -->
 

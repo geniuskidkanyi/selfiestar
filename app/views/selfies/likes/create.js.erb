@@ -1,0 +1,2 @@
+$("#<%= @selfie.id%>_likes").html("<%=j render  partial: "selfies/likes/likes", locals: { selfie: @selfie}  %>");
+$("#<%=@selfie.id %>_counter").html("<%= @selfie.likes.count %>");

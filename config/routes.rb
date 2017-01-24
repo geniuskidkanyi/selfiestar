@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'upload' => 'pages#upload'
-  resources :selfies
+  resources :selfies do
+    resource :like, module: :selfies
+    # member do
+    #   get "like", to: "selfies#like", via: :post
+    #
+    #   delete "unlike", to: "selfies#unlike"
+    # end
+  end
   devise_scope :user do
 
       get "/signup" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration

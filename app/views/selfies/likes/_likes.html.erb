@@ -1,0 +1,10 @@
+<% if user_signed_in? && current_user.likes?(selfie) %>
+<%= link_to selfy_like_path(selfie), method: :delete, remote: true do %>
+<button class="like liked">unlike</button>
+<% end %>
+
+<% else %>
+<%= link_to selfy_like_path(selfie), method: :post, remote: true do %>
+<button class="like">like</button>
+<% end %>
+<% end %>

@@ -26,6 +26,8 @@ class SelfiesController < ApplicationController
         end
   end
 
+
+
     protected
 
     def selfie_params
