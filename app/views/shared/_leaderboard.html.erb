@@ -1,5 +1,12 @@
 <aside class="sidebar">
-    <h2 class="grid-title-text">Leader board</h2>
+  <h2 class="grid-title-text">winner</h2>
+  <%= @winner.title if @winner.title.exist? %>
+    <h2 class="grid-title-text">Trending</h2>
+    <% @week_trendings.each do |trending| %>
+        <p><%= trending.title%></p>
+        <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
+    <% end %>
+
     <img src="http://lifestyle.ynaija.com/wp-content/uploads/2015/09/maxresdefault-3.jpg" alt="#" />
     <img src="http://lifestyle.ynaija.com/wp-content/uploads/2015/09/maxresdefault-3.jpg" alt="#" />
     <img src="hhttp://lifestyle.ynaija.com/wp-content/uploads/2015/09/maxresdefault-3.jpg" alt="#" />
