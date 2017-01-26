@@ -1,31 +1,35 @@
 <% @selfies.each do |selfie| %>
 <div class="card">
 
-<div class="card-main" >
-    <a class="show_lightbox" data-selfie-id="<%= selfie.id %>" href="<%= selfie.photo.url %>">
-        <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
+    <div class="card-main">
+        <a class="show_lightbox" data-selfie-id="<%= selfie.id %>" href="<%= selfie.photo.url %>">
+            <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
 
-
-    </a>
-    <div id="<%= selfie.id%>_likes">
-          <%= render  partial: "selfies/likes/likes", locals: { selfie: selfie} %>
+        </a>
+        <div id="<%= selfie.id%>_likes">
+            <%= render  partial: "selfies/likes/likes", locals: { selfie: selfie} %>
+        </div>
+        <!-- add class liked for image like by current user -->
     </div>
-  <!-- add class liked for image like by current user -->
-</div><!-- .card-main -->
+    <!-- .card-main -->
     <div class="card-footer">
         <div class="card-footer-avatar">
-            <img class="card-footer-avater-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="avatar" />
-        </div><!-- .card-footer-avater -->
+            <img class="card-footer-avater-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="avatar"/>
+        </div>
+        <!-- .card-footer-avater -->
         <div class="card-footer-text">
             <a href="#" class="card-footer-title"><%= selfie.user.email %></a>
             <div class="card-footer-info">
 
-
                 <div class="card-footer-likes" id="<%= selfie.id %>_counter"><%= selfie.likes.count %></div>
-                <a href="#" class="card-footer-views">{{ $photo->views }}</a>
-            </div><!-- .card-footer-info -->
+                <a href="#" class="card-footer-views"><%= "#{selfie.impressions.count} views" %></a>
+            </div>
+            <!-- .card-footer-info -->
 
-        </div><!-- .card-footer-text -->
-    </div><!-- .card-footer -->
-</div><!-- .card -->
+        </div>
+        <!-- .card-footer-text -->
+    </div>
+    <!-- .card-footer -->
+</div>
+<!-- .card -->
 <% end %>

@@ -1,9 +1,15 @@
 class SelfiesController < ApplicationController
     impressionist actions: [:show], unique: [:session_hash]
+    impressionist :unique => [:session_hash]
 
     def show
         @selfie = Selfie.find(params[:id])
-        render js
+        impressionist(@selfie)
+        respond_to do |format|
+          format.js
+
+        end
+
     end
 
     def create
