@@ -1,6 +1,7 @@
 <aside class="sidebar">
   <h2 class="grid-title-text">winner</h2>
-  <%= @winner.title if @winner.title.exist? %>
+  <p><%= winner.first.id  %></p>
+  <p><%= winner.first.title  %></p>
     <h2 class="grid-title-text">Trending</h2>
     <% @week_trendings.each do |trending| %>
         <p><%= trending.title%></p>

@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+  movies = Selfie.create([{ title: 'Star Wars', created_at: 2.weeks.ago }])
 #   Character.create(name: 'Luke', movie: movies.first)

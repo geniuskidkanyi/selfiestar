@@ -4,9 +4,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 has_many :likes
-
-def likes?(selfie)
-  selfie.likes.where(user_id: id).any?
+has_many :selfies
+def likes?(selfy)
+  selfy.likes.where(user_id: id).any?
 end
 
 end
