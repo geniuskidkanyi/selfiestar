@@ -9,8 +9,9 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user = current_user
-    @selfies = current_user.selfies.all.order(created_at: :desc)
+    @user = User.find(params[:id])
+    @week_trendings = trending
+    @selfies = @user.selfies.all.order(created_at: :desc)
   end
 
   private
@@ -18,7 +19,7 @@ class PagesController < ApplicationController
 def trending
   date = DateTime.now.utc
   likes = Like.where('created_at >= ? and created_at <= ?', date.beginning_of_week, date.utc.end_of_week).select(:selfy_id)
-  top = Selfy.where(id: likes)
+  top = current_user.selfies.where(id: likes)
   top.order("COALESCE(likes_count, 0) DESC").limit(10)
 end
 

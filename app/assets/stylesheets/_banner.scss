@@ -1,10 +1,11 @@
 .banner {
-  width: calc(100% - 32px);
-  margin: 8px auto;
+  width: 100%;
+  margin:auto;
   background-color: $brand;
   color: white;
   padding: 8px;
   text-align: center;
+  box-sizing: border-box;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
   @include at-least($tablet) {

@@ -1,9 +1,11 @@
+<%= render 'shared/lightbox' %>
+<%= render 'shared/leaderboard' %>
 
-<div class="grid">
-    <div class="grid-title">
-      <h2 class="grid-title-text">
-      <%= @user.email %> Entries
-      </h2>
-    </div>
-<%= render 'shared/selfies' %>
+    <div class="grid">
+        <div class="grid-title">
+          <h2 class="grid-title-text">
+            <%= @user.username %> Entries
+          </h2>
+        </div>
+  <%= render 'shared/selfies' %>
 </div><!-- .grid -->

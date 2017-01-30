@@ -29,6 +29,8 @@ gem 'pry'
 gem 'impressionist'
 gem 'groupdate'
 gem 'pg'
+gem 'two_factor_authentication', github: 'Houdini/two_factor_authentication'
+gem 'twilio-ruby', '~> 4.11.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

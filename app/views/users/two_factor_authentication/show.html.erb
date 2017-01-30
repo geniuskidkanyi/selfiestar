@@ -1,0 +1,13 @@
+
+
+<%= form_tag([resource_name, :two_factor_authentication], class: "card login-card", :method => :put) do %>
+<h2>Hi, you received a code by number you registered with, please enter it below, thanks!</h2>
+<div>
+  <%= text_field_tag :code, nil , {:class => 'input'} %>
+</div>
+
+  <%= submit_tag "Log in!" %>
+
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+<% end %>

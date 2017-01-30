@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'upload' => 'pages#upload'
-  get 'profile' => 'pages#profile'
+  get 'profile/:id' => 'pages#profile', as: 'profile'
+
   resources :selfies do
     resource :like, module: :selfies
     # member do
