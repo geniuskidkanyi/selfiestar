@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require dropzone
 //= require_tree .
 
 $(document).on('ready turbolinks:load', function() {
