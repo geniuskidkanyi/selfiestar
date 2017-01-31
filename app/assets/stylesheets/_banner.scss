@@ -20,3 +20,44 @@
     }
   }
 }
+
+
+.js-fileupload {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  border: 2px dashed gray;
+  border-radius: .5em;
+  padding: 3em;
+  text-indent: -9999;
+  overflow: hidden;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: black;
+  }
+
+  &::-webkit-file-upload-button {
+    appearance: none;
+    background: transparent;
+    border: none;
+    width: 0;
+    height: 0;
+    display: block;
+  }
+
+  &:before {
+    display: inline-block;
+    color: gray;
+    content: "...click to choose, or drag a file.";
+    width: 100%;
+    line-height: 1.6em;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  &:active {
+    color: transparent;
+  }
+}
