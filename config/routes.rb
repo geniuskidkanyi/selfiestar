@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  authenticated :user do
+  #  get '/home', to: 'pages#home', as: :authenticated_root
+   root 'pages#home', as: :authenticated_root
+  end
+  root 'pages#index'
   get 'upload' => 'pages#upload'
   get 'profile/:id' => 'pages#profile', as: 'profile'
 
@@ -12,8 +16,7 @@ Rails.application.routes.draw do
     # end
   end
   devise_scope :user do
-
-      get "/signup" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
+    get "/signup" => "devise/registrations#new", as: "new_user_registration"
     end
   devise_for :users, skip: [:sessions]
   as :user do

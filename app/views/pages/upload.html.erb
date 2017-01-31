@@ -5,34 +5,8 @@
   <%= f.label :photo, class: "label" %>
   <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/>
   <%= f.hidden_field :photo_cache %>
-  <%= f.file_field :photo, id: "avatar-upload", class: "js-fileupload" %>
+  <%= f.file_field :photo, id: "avatar-upload", class: "fileupload" %>
 </div>
 
 <%= f.submit class: "btn" %>
 <% end %>
-<script>
-$(function() {
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        $('#img_prev').attr('src', e.target.result);
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
-  $("#avatar-upload").change(function(){
-    $('#img_prev').removeClass('hidden');
-    readURL(this);
-  });
-});
-$(document).on("dragover drop", function(e) {
-    e.preventDefault();
-}).on("drop", function(e) {
-    $("input[type='file']")
-        .prop("files", e.originalEvent.dataTransfer.files)
-        .closest("form")
-});
-</script>

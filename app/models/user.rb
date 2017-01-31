@@ -1,6 +1,6 @@
 require 'twilio-ruby'
 class User < ApplicationRecord
-    # devise
+      mount_uploader :avatar, PhotoUploader
     devise :two_factor_authenticatable, :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
     def email_required?

@@ -14,8 +14,9 @@
     <!-- .card-main -->
     <div class="card-footer">
         <div class="card-footer-avatar">
-          <%= link_to selfie.user.username, profile_path(selfie.user.id) %>
-            <img class="card-footer-avater-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="avatar"/>
+          <%= link_to  profile_path(selfie.user.id) do %>
+          <%= gravatar_for selfie.user %>
+          <% end %>
         </div>
         <!-- .card-footer-avater -->
         <div class="card-footer-text">
@@ -23,10 +24,10 @@
             <div class="card-footer-info">
 
                 <div class="card-footer-likes" id="<%= selfie.id %>_counter"><%= selfie.likes.count %></div>
-                <a href="#" class="card-footer-views"><%= "#{selfie.impressions.count}" %></a>
+                <a href="#" class="card-footer-views"><%= selfie.impressions.count %></a>
             </div>
             <!-- .card-footer-info -->
-
+(:filter=>:session_hash)
         </div>
         <!-- .card-footer-text -->
     </div>

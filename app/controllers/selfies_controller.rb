@@ -1,15 +1,13 @@
 class SelfiesController < ApplicationController
-  before_action :authenticate_user!
   before_action :authenticate_user!, :only => [:create, :show]
     impressionist actions: [:show], unique: [:session_hash]
     impressionist :unique => [:session_hash]
 
     def show
         @selfie = Selfy.find(params[:id])
-        impressionist(@selfie)
+        
         respond_to do |format|
-
-          format.js
+        format.json { render json: @selfie }
 
         end
 

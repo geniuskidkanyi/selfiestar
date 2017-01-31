@@ -16,7 +16,7 @@
                 <ul class="menu">
                     <li>
                       <%= link_to "Upload", upload_path, class: "upload_link" %>
-                      
+
                     </li>
                     <% if user_signed_in? %>
                     <li>
@@ -62,8 +62,9 @@
                 </div>
                 <div class="footer_section">
                     <div class="partner-grid">
-                        <img class="partner" src="photos/afripay.jpg" alt="afripay">
-                        <img class="partner" src="photos/qodoo.png" alt="qodoo">
+                      <%= image_tag('afripay.jpg',  class: 'partner' )%>
+                      <%= image_tag('qodoo.png',  class: 'partner' )%>
+
                     </div>
                 </div>
                 <div class="footer_section">

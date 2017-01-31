@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  before_action :authenticate_user!, :only => [:upload, :profile]
+  def index
+    @selfies = Selfy.all.order(created_at: :desc)
+
+  end
   def home
     @selfies = Selfy.all.order(created_at: :desc)
     @week_trendings = trending
