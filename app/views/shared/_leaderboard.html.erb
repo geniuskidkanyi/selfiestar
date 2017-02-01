@@ -1,8 +1,41 @@
 <aside class="sidebar">
     <h2 class="grid-title-text">My trendings</h2>
     <% @week_trendings.each do |trending| %>
-        <p><%= trending.title%></p>
-        <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
+        <div class="card-trending">
+
+            <div class="card-main">
+                <a class="show_lightbox" data-selfie-id="<%= trending.id %>" href="<%= trending.photo.url %>">
+                    <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
+
+                </a>
+                <div id="<%= trending.id%>_likes">
+                    <%= render  partial: "selfies/likes/likes", locals: { selfie: trending} %>
+                </div>
+                <!-- add class liked for image like by current user -->
+            </div>
+            <!-- .card-main -->
+            <div class="card-footer">
+                <div class="card-footer-avatar">
+                  <%= link_to  profile_path(trending.user.id) do %>
+                  <%= gravatar_for trending.user %>
+                  <% end %>
+                </div>
+                <!-- .card-footer-avater -->
+                <div class="card-footer-text">
+                    <a href="#" class="card-footer-title"><%= trending.user.username %></a>
+                    <div class="card-footer-info">
+
+                        <div class="card-footer-likes" id="<%= trending.id %>_counter"><%= trending.likes.count %></div>
+                        <a href="#" class="card-footer-views"><%= trending.impressions.count %></a>
+                    </div>
+                    <!-- .card-footer-info -->
+
+                </div>
+                <!-- .card-footer-text -->
+            </div>
+            <!-- .card-footer -->
+        </div>
+
     <% end %>
 
 </aside>
