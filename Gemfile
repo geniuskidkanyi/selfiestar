@@ -31,8 +31,7 @@ gem 'groupdate'
 gem 'pg'
 gem 'two_factor_authentication', github: 'Houdini/two_factor_authentication'
 gem 'twilio-ruby', '~> 4.11.1'
-gem "sprockets", "~> 4.x"
-gem "babel-schmooze-sprockets"
+gem "sprockets",'~> 3.0', '>= 3.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
