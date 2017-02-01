@@ -15,11 +15,12 @@ Rails.application.routes.draw do
     #   delete "unlike", to: "selfies#unlike"
     # end
   end
-  devise_scope :user do
-    get "/signup" => "devise/registrations#new", as: "new_user_registration"
-    end
-  devise_for :users, skip: [:sessions]
+   devise_scope :user do
+  get "/signup" => "devise/registrations#new", as: "new_user_registration"
+     end
+  devise_for :users, skip: [:sessions],:controllers => {:registrations => "registrations"}
   as :user do
+
       get 'login' => 'devise/sessions#new', :as => :new_user_session
       post 'login' => 'devise/sessions#create', :as => :user_session
       match 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session,
