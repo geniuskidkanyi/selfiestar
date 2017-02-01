@@ -5,7 +5,7 @@ class SelfiesController < ApplicationController
 
     def show
         @selfie = Selfy.find(params[:id])
-        
+
         respond_to do |format|
         format.json { render json: @selfie }
 
@@ -21,7 +21,7 @@ class SelfiesController < ApplicationController
                 format.html { redirect_to root_path, notice: 'selfie was successfully created.' }
 
             else
-                format.html { render :new }
+                format.html { redirect_to upload_path}
 
             end
         end
