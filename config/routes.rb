@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   root 'pages#index'
   get 'upload' => 'pages#upload'
+  get 'about' => 'pages#about'
   get 'profile/:id' => 'pages#profile', as: 'profile'
 
   resources :selfies do
