@@ -4,6 +4,9 @@
   border-radius: 2px;
   margin: 8px;
   width: 100%;
+  @include at-least($small-mobile) {
+      width: calc(50% - 16px);
+  }
   @include at-least($large-mobile) {
       width: calc(50% - 16px);
   }
@@ -19,7 +22,17 @@
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
   border-radius: 2px;
   margin: 8px;
-  width: 100%;}
+  width: 100%;
+  @include at-least($large-mobile) {
+      width: calc(50% - 16px);
+  }
+  @include at-least($small-desktop) {
+      width: calc(33.33% - 16px);
+  }
+  @include at-least($large-desktop) {
+      width: calc(25% - 16px);
+  }
+}
 .card-footer {
   display: flex;
   padding: 8px;

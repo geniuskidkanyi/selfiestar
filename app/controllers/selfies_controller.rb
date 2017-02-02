@@ -8,7 +8,7 @@ class SelfiesController < ApplicationController
 
         respond_to do |format|
         format.json { render json: @selfie }
-
+        format.html { render json: @selfie }
         end
 
     end

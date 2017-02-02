@@ -12,25 +12,7 @@
                 <!-- add class liked for image like by current user -->
             </div>
             <!-- .card-main -->
-            <div class="card-footer">
-                <div class="card-footer-avatar">
-                  <%= link_to  profile_path(trending.user.id) do %>
-                  <%= gravatar_for trending.user %>
-                  <% end %>
-                </div>
-                <!-- .card-footer-avater -->
-                <div class="card-footer-text">
-                    <a href="#" class="card-footer-title"><%= trending.user.username %></a>
-                    <div class="card-footer-info">
 
-                        <div class="card-footer-likes"><%= trending.likes.count %></div>
-                        <a href="#" class="card-footer-views"><%= trending.impressions.count %></a>
-                    </div>
-                    <!-- .card-footer-info -->
-
-                </div>
-                <!-- .card-footer-text -->
-            </div>
             <!-- .card-footer -->
         </div>
 

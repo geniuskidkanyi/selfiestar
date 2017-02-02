@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   def gravatar_for(user, options = { size: 30 })
       size = options[:size]
-      gravatar_url = "http://localhost:3000/avatar.jpg"
+      gravatar_url = "http://beta.selfiestar.gm/avatar.jpg"
       avatar_url = user.avatar? ? user.avatar.url : gravatar_url
       image_tag(avatar_url, alt: user.username, class: "card-footer-avater-image")
   end
