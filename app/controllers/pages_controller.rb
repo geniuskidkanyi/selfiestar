@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
   def home
     @selfies = Selfy.all.order(created_at: :desc)
-    @week_trendings = trending
+    @week_trendings = trending_wide
 
   end
   def upload
@@ -26,10 +26,10 @@ class PagesController < ApplicationController
     top = current_user.selfies.where(id: likes)
     top.order("COALESCE(likes_count, 0) DESC").limit(5)
   end
-def trending
+def trending_wide
   date = DateTime.now.utc
   likes = Like.where('created_at >= ? and created_at <= ?', date.beginning_of_week, date.utc.end_of_week).select(:selfy_id)
-  top = current_user.selfies.where(id: likes)
+  top = Selfy.where(id: likes)
   top.order("COALESCE(likes_count, 0) DESC").limit(5)
 end
 
