@@ -1,5 +1,5 @@
 <aside class="sidebar">
-    <h2 class="grid-title-text">My trendings</h2>
+    <h2 class="grid-title-text">Trendings</h2>
     <% @week_trendings.each do |trending| %>
         <div class="card-trending">
 
@@ -8,9 +8,7 @@
                     <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
 
                 </a>
-                <div id="<%= trending.id%>_likes">
-                    <%= render  partial: "selfies/likes/likes", locals: { selfie: trending} %>
-                </div>
+
                 <!-- add class liked for image like by current user -->
             </div>
             <!-- .card-main -->
@@ -25,7 +23,7 @@
                     <a href="#" class="card-footer-title"><%= trending.user.username %></a>
                     <div class="card-footer-info">
 
-                        <div class="card-footer-likes" id="<%= trending.id %>_counter"><%= trending.likes.count %></div>
+                        <div class="card-footer-likes"><%= trending.likes.count %></div>
                         <a href="#" class="card-footer-views"><%= trending.impressions.count %></a>
                     </div>
                     <!-- .card-footer-info -->
