@@ -11,8 +11,8 @@ body {
 .main {
   display: flex;
   flex-flow: row wrap;
-  display: flex;
-  min-height: 100vh;
+  // display: flex;
+  // min-height: 100vh;
   max-width: $full-screen;
   margin: 8px auto;
   align-items: flex-start;
