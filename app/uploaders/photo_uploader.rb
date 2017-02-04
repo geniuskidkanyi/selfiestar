@@ -5,12 +5,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
 
 
-    process :quality => 100 # Set JPEG/MIFF/PNG compression level (0-100)
+
     process :convert => 'png'
-    process :colorspace => :rgb # Set colorspace to rgb or cmyk
     process :auto_orient # Rotate the image if it has orientation data
-    process :resize_and_pad => [612, 792, "#000",Magick::CenterGravity]
-      process :optimize
+    process :resize_to_fit => [612, 792]
+    process optimize: [{ quiet: true, quality: 50  }]
     storage :file
     def filename
       super.chomp(File.extname(super)) + '.png'
