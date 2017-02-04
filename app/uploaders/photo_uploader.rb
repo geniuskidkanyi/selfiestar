@@ -1,13 +1,19 @@
 class PhotoUploader < CarrierWave::Uploader::Base
-
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
-
+  include CarrierWave::RMagick
+  include CarrierWave::Processing::RMagick
+  include CarrierWave::ImageOptimizer
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
 
+    process :optimize
+    process :quality => 90 # Set JPEG/MIFF/PNG compression level (0-100)
+    process :convert => 'png'
+    process :colorspace => :rgb # Set colorspace to rgb or cmyk
+    process :auto_orient # Rotate the image if it has orientation data
+    process :resize_and_pad => [1200,1600, "#7A339B",Magick::CenterGravity]
+    storage :file
+    def filename
+      super.chomp(File.extname(super)) + '.png'
+    end
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

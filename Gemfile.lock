@@ -77,6 +77,11 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-imageoptimizer (1.4.0)
+      carrierwave (>= 0.8, < 2.0)
+      image_optimizer (~> 1.6)
+    carrierwave-processing (1.1.0)
+      carrierwave
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -106,6 +111,7 @@ GEM
     groupdate (3.2.0)
       activesupport (>= 3)
     i18n (0.8.0)
+    image_optimizer (1.7.0)
     impressionist (1.5.2)
       nokogiri (~> 1.6)
     jbuilder (2.6.1)
@@ -176,6 +182,7 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rmagick (2.16.0)
     rotp (3.3.0)
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -238,6 +245,8 @@ DEPENDENCIES
   capistrano-rails (~> 1.2)
   capistrano-rbenv (~> 2.1)
   carrierwave (~> 1.0)
+  carrierwave-imageoptimizer
+  carrierwave-processing
   coffee-rails (~> 4.2)
   devise
   dropzonejs-rails
@@ -251,6 +260,7 @@ DEPENDENCIES
   pry
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rmagick
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
