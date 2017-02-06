@@ -11,9 +11,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [612, 792]
     process optimize: [{ quiet: true, quality: 50  }]
     storage :file
-    def filename
-      super.chomp(File.extname(super)) + '.png'
-    end
+    
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
