@@ -2,8 +2,15 @@
 <div class="card">
 
     <div class="card-main">
-        <a class="show_lightbox" data-selfie-id="<%= selfie.id %>" href="<%= selfie.photo.url %>">
-            <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
+
+    <%= link_to fetch_selfy_path(selfie.id), class: "show_lightbox", data: { featherlight: "mylightbox" }, remote: true do %>
+
+      <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
+    <% end %>
+<div class="lightbox">
+    <%=render partial: "selfies/show", locals: { selfie: selfie }  %>
+</div>
+
 
         </a>
         <div id="<%= selfie.id%>_likes">

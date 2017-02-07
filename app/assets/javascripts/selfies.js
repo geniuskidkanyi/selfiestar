@@ -24,10 +24,6 @@ $(document).on('ready turbolinks:load', function () {
         $('.lightbox_container_image img').attr('src', src);
         $('.lightbox').show().animateCss('fadeIn');
 
-        $.ajax({
-            type: "get",
-            url: "/selfies/" + $selfie_id
-        });
     });
 
     $('.lightbox').not($('.lightbox_container')).on('click', function (e) {

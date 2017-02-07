@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
   def home
     @selfies = Selfy.all.order(created_at: :desc)
+  
     @week_trendings = trending_wide
 
   end

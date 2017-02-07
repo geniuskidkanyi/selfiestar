@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'upload' => 'pages#upload'
   get 'about' => 'pages#about'
   get 'profile/:id' => 'pages#profile', as: 'profile'
+  get "/fetch_selfie/:id" => 'selfies#show', as: 'fetch_selfy'
 
   resources :selfies do
     resource :like, module: :selfies
