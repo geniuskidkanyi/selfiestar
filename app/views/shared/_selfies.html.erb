@@ -7,7 +7,7 @@
 
       <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
     <% end %>
-<div class="lightbox">
+<div class="lightbox" id="lightbox">
     <%=render partial: "selfies/show", locals: { selfie: selfie }  %>
 </div>
 

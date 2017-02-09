@@ -5,11 +5,12 @@ class SelfiesController < ApplicationController
 
     def show
         @selfie = Selfy.find(params[:id])
+         impressionist(@selfie)
         respond_to do |format|
             format.html
             format.js
         end
-        end
+    end
 
     def create
         @selfie = Selfy.create(selfie_params)

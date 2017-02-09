@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   authenticated :user do
   #  get '/home', to: 'pages#home', as: :authenticated_root
    root 'pages#home', as: :authenticated_root
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :selfies do
     resource :like, module: :selfies
+    resources :comments, module: :selfies
     # member do
     #   get "like", to: "selfies#like", via: :post
     #
