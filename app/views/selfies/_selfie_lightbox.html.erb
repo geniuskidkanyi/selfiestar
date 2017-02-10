@@ -6,9 +6,11 @@
         <div class="lightbox_container_meta">
           <div class="comments" data-behavior="comments" data-selfie-id="<%= selfie.id %>" id="comments">
             <% selfie.comments.each do |comment| %>
+
               <%= render partial: "selfies/comments/comment",  locals: { comment: comment } %>
             <% end %>
-            </div>
+        </div>
+
       <%= render 'selfies/comments/new' %>
 
         </div>

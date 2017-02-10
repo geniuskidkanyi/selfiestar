@@ -5,6 +5,7 @@ class SelfiesController < ApplicationController
 
     def show
         @selfie = Selfy.find(params[:id])
+        
          impressionist(@selfie)
         respond_to do |format|
             format.html

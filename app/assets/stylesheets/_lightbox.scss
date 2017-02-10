@@ -7,7 +7,19 @@
     right:0;
     z-index: 2;
     display: none;
+    input[type=submit] {
+      width: 32px;
+      height: 32px;
+      z-index: 9;
+      position: absolute;
+      bottom: 32px;
+      right: 16px;
+      background-color: #7a339b;
+      border: 0;
+      box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+      text-indent: -9999px;
 
+    }
     &_container {
         position: fixed;
         display: flex;
@@ -54,7 +66,10 @@
             width: 100%;
 
             @include at-least($tablet) {
-                width: 33.33%;
+              width: calc(100% / 3);
+              height: 0;
+              padding-bottom: calc((100% / 3) * 2);
+              position: relative;
             }
 
         }
@@ -63,4 +78,49 @@
 
 .show {
     display: block;
+}
+
+.comments {
+  margin-top: 8px;
+  width: 100%;
+  height: 0;
+  padding: 4px;
+  box-sizing: border-box;
+  padding-bottom: calc(200% - 90px);
+  line-height: 32px;
+  overflow: scroll;
+}
+
+.new_comment {
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+    &:after {
+    content: '>';// replace with font icon
+    display: block;
+    text-indent: 0;
+    color: white;
+    position: absolute;
+    bottom: 36px;;
+    right: 22px;
+      font-size: 24px;
+  }
+}
+
+.form-control {
+  width: calc(100% - 8px);
+  margin: 8px 4px;
+  min-height: 72px;
+  line-height: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 8px 40px 8px 8px;
+  border: 0;
+  border-bottom: 1px solid #7a339b;
+  resize: none;
+  outline:none;
+  box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
 }
