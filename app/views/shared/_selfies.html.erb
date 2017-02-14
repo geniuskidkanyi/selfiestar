@@ -1,3 +1,6 @@
+<div class="lightbox" id="lightbox">
+    <%=render partial: "selfies/show", locals: { selfie: @selfie }  %>
+</div>
 <% @selfies.each do |selfie| %>
 <div class="card">
 
@@ -7,9 +10,7 @@
 
       <img class="card-main-image" src="<%= selfie.photo.url if selfie.photo.url  %>" alt="Image Alt text">
     <% end %>
-<div class="lightbox" id="lightbox">
-    <%=render partial: "selfies/show", locals: { selfie: selfie }  %>
-</div>
+
 
 
         </a>
