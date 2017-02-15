@@ -9,10 +9,10 @@
         <div class="card-trending">
 
             <div class="card-main">
-                <a class="show_lightbox" data-selfie-id="<%= trending.id %>" href="<%= trending.photo.url %>">
-                    <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
+              <%= link_to fetch_selfy_path(trending.id), class: "show_lightbox", data: { featherlight: "mylightbox" }, remote: true do %>
 
-                </a>
+                <img class="card-main-image" src="<%= trending.photo.url if trending.photo.url  %>" alt="Image Alt text">
+              <% end %>
 
                 <!-- add class liked for image like by current user -->
             </div>

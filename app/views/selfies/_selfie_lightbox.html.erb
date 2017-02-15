@@ -4,7 +4,7 @@
             <img src="<%= selfie.photo.url if selfie.photo.url  %>" alt="" />
         </div>
         <div class="lightbox_container_meta">
-          <div class="comments" data-behavior="comments" data-selfie-id="<%= selfie.id %>" id="comments">
+          <div class="comment-container comments" data-behavior="comments" data-selfie-id="<%= selfie.id %>" id="comments">
             <% selfie.comments.each do |comment| %>
 
               <%= render partial: "selfies/comments/comment",  locals: { comment: comment } %>
