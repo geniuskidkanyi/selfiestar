@@ -4,9 +4,10 @@
       Trending
     </h2>
   </div>
-
+  <div class="main-carousel">
     <% @week_trendings.each do |trending| %>
-        <div class="card-trending">
+    <div class="carousel-cell card-trending">
+        <div class="">
 
             <div class="card-main">
               <%= link_to fetch_selfy_path(trending.id), class: "show_lightbox", data: { featherlight: "mylightbox" }, remote: true do %>
@@ -20,7 +21,13 @@
 
             <!-- .card-footer -->
         </div>
+        <!-- .carousel ending -->
+        </div>
 
     <% end %>
+
+
+
+  </div>
 
 </aside>

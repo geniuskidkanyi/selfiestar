@@ -32,6 +32,12 @@ $(document).on('ready turbolinks:load', function() {
     $('#img_prev').removeClass('hidden');
     readURL(this);
   });
+  $('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true,
+  wrapAround: true
+});
 });
 $(document).on("dragover drop", function(e) {
     e.preventDefault();

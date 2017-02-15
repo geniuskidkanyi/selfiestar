@@ -23,36 +23,14 @@ body {
 .hidden{display: none}
 .sidebar {
   margin:0 8px;
-  display: flex;
-  flex-flow: row wrap;
-  img {
-    width: 100%;
-    margin: 8px 0;
-  }
-  width: calc(100% - 16px);
-  @include at-least($tablet) {
-      width: 33.33%;
-  }
-  @include at-least($small-desktop) {
-      width: 25%;
-  }
-  @include at-least($large-desktop) {
-      width: 20%;
-  }
+width: 100%;
+
 }
 .grid {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  @include at-least($tablet) {
-      width: calc(66.66% - 16px);
-  }
-  @include at-least($small-desktop) {
-      width: calc(75% - 16px);
-  }
-  @include at-least($large-desktop) {
-      width: calc(80% - 16px);
-  }
+
 }
 
 .grid-title {
