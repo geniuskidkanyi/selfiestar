@@ -1,0 +1,33 @@
+<div class="grid-title">
+  <h2 class="grid-title-text">
+  <%= link_to "Edit profile", edit_user_registration_path %>
+  </h2>
+</div>
+
+<div class="card profile_card">
+    <div class="card-main">
+
+
+
+      <%= gravatar_user @user %>
+  <h3 class="profile_title"><%= @user.username %></h3>
+
+
+    </div>
+    <!-- .card-main -->
+    <div class="card-footer">
+        <!-- .card-footer-avater -->
+        <div class="card-footer-text">
+            <a href="#" class="card-footer-title"> Total  </a>
+            <div class="card-footer-info">
+              <div class="card-footer-selfies"><%= @user.selfies.count %></div>
+                <a href="#" class="card-footer-views"><%= @user.likes.count %></a>
+            </div>
+            <!-- .card-footer-info -->
+
+        </div>
+        <!-- .card-footer-text -->
+    </div>
+    <!-- .card-footer -->
+</div>
+</div>

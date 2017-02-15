@@ -4,6 +4,7 @@
   border-radius: 2px;
   margin: 8px;
   width: 100%;
+
   @include at-least($small-mobile) {
       width: calc(50% - 16px);
   }
@@ -17,6 +18,15 @@
       width: calc(25% - 16px);
   }
 }
+  .profile_card{width: 100%;}
+  .profile_title{
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
 .card-trending {
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
@@ -66,6 +76,7 @@
 }
 
 .card-footer-likes,
+.card-footer-selfies,
 .card-footer-views {
   width: 50%;
   display: block;
@@ -89,7 +100,10 @@
 .card-footer-views:before {
   content: "remove_red_eye";
 }
+.card-footer-selfies:before {
 
+  content: "face";
+}
 .card-header-subtitle {
   display: block;
   line-height: 24px;

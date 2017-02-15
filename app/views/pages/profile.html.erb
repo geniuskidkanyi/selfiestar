@@ -1,11 +1,12 @@
 
 <%= render 'shared/leaderboard' %>
-
-    <div class="grid">
+<aside class="sidebar">
+<%= render 'users/profile' %>
+</aside>
+    <div class="grid <%= @width %>">
         <div class="grid-title">
           <h2 class="grid-title-text">
-            <%= @user.username %> Entries
-            <%= link_to "Edit profile", edit_user_registration_path %>
+          My Entries
           </h2>
         </div>
   <%= render 'shared/selfies' %>
