@@ -1,5 +1,9 @@
 <%= form_for [ @selfie, Comment.new ], remote: true do |f| %>
 
   <%= f.text_area :body,  class: "form-control" %>
-  <%= f.submit %>
+  <%= button_tag( :class => "form_btn") do %>
+    <i class="material-icons">send</i>
+  <% end %>
+
+
 <% end %>

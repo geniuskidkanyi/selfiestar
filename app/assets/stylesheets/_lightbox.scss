@@ -7,19 +7,20 @@
     right:0;
     z-index: 2;
     display: none;
-    input[type=submit] {
+    .form_btn {
       width: 32px;
       height: 32px;
-      // z-index: 9;
+    color: white;
       position: absolute;
       bottom: 32px;
       right: 16px;
       background-color: #7a339b;
       border: 0;
       box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
-      text-indent: -9999px;
+      // text-indent: -9999px;
 
-    }
+}
+
     &_container {
         position: fixed;
         display: flex;
@@ -139,7 +140,7 @@
   left: 0;
   right: 0;
     &:after {
-    content: '>';// replace with font icon
+
     display: block;
     text-indent: 0;
     color: white;
@@ -163,4 +164,8 @@
   resize: none;
   outline:none;
   box-shadow: rgba(0, 0, 0, 0.11765) 0px 1px 6px, rgba(0, 0, 0, 0.11765) 0px 1px 4px;
+}
+.form_button{
+  @extend .material-icons;
+ content: 'favorite';
 }

@@ -48,14 +48,40 @@
             top:50%;
             transform:translate3d(0%,-50%,0);
             text-indent: 0px;
-            content: "\f0ee";
-            font-family: FontAwesome;
-            font-size: 24px;
+
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;  /* Preferred icon size */
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+            /* Support for IE. */
+            font-feature-settings: 'liga';
           }
     }
-    .upload_link:before {content: "\f0ee";}
-    .profile_link:before {content: "\f007";}
-    .signout_link:before {content: "\f08b";}
-    .signup_link:before {content: "\f139";}
-    .signin_link:before {content: "\f090";}
+    .upload_link:before {
+
+        content: 'cloud_upload';
+      }
+    .profile_link:before {content: 'account_circle';}
+    .signout_link:before {content: 'exit_to_app';}
+    .signup_link:before {
+
+    content: 'perm_identity';}
+    .signin_link:before {
+
+      content: 'supervisor_account';}
 }

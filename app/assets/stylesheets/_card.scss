@@ -78,15 +78,16 @@
     top:50%;
     transform:translate3d(0%,-50%,0);
     text-indent: 0px;
-    content: "\f004";
-    font-family: FontAwesome;
+     @extend .material-icons;
+    content: 'favorite';
+
     font-size: 16px;
     color: $brand;
   }
 }
 
 .card-footer-views:before {
-  content: "\f06e";
+  content: "remove_red_eye";
 }
 
 .card-header-subtitle {
@@ -125,8 +126,9 @@
     top:50%;
     transform:translate3d(-50%,-50%,0);
     text-indent: 0px;
-    content: "\f08a";
-    font-family: FontAwesome;
+     @extend .material-icons;
+    content: "favorite_border";
+
     font-size: 32px;
     color: $brand;
   }
@@ -134,6 +136,6 @@
 
 .liked{
   &:before {
-    content: "\f004";
+    content: "favorite";
   }
 }
