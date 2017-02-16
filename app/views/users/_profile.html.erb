@@ -1,33 +1,19 @@
-<div class="grid-title">
-  <h2 class="grid-title-text">
-  <%= link_to "Edit profile", edit_user_registration_path %>
-  </h2>
+<div class="profile-card">
+<div class="profile-card__img">  <%= gravatar_user @user %>
+<%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
 </div>
-
-<div class="card profile_card">
-    <div class="card-main">
-
-
-
-      <%= gravatar_user @user %>
-  <h3 class="profile_title"><%= @user.username %></h3>
-
-
-    </div>
-    <!-- .card-main -->
-    <div class="card-footer">
-        <!-- .card-footer-avater -->
-        <div class="card-footer-text">
-            <a href="#" class="card-footer-title"> Total  </a>
-            <div class="card-footer-info">
-              <div class="card-footer-selfies"><%= @user.selfies.count %></div>
-                <a href="#" class="card-footer-views"><%= @user.likes.count %></a>
-            </div>
-            <!-- .card-footer-info -->
-
-        </div>
-        <!-- .card-footer-text -->
-    </div>
-    <!-- .card-footer -->
+<div class="profile-card__meta">
+<div class="profile-card__meta__title">
+<%= @user.username %>
 </div>
+  <div class="profile-card__meta__detail">
+  <h3 class="selfies">  <%= @user.selfies.count %>selfies</h3>
+  </div>
+  <div class="profile-card__meta__detail">
+  <h3 class="likes">  <%= @user.likes.count %> likes </h3>
+  </div>
+  <div class="profile-card__meta__detail">
+  <h3 class="views">views</h3>
+  </div>
+  </div>
 </div>

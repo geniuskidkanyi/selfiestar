@@ -22,7 +22,9 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
-
+h3{
+  margin: 0;
+}
 @import 'animate';
 @import 'variables';
 @import 'typography';
@@ -35,4 +37,4 @@
 @import 'registration';
 @import 'notification';
 @import 'lightbox';
-@import "dropzone";
+@import "profile";

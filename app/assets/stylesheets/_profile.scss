@@ -1,0 +1,76 @@
+.profile-card{
+  display:flex;
+  width: 100%;
+  flex-flow: row wrap;
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  border-radius: 2px;
+background-color: white;
+color: #7a339b;
+  &__img{
+    width:100%;
+    height: 200px;
+    @include at-least($large-mobile) {
+        width: calc(30%);
+        height: 300px;
+    }
+    position: relative;
+    overflow: hidden;
+    .btn {position: absolute;
+    bottom: 0;
+    text-align: center;}
+    img{
+      display: block;
+    position: absolute;
+    width: 100%;
+
+    top: 0;
+
+    }
+  }
+  &__meta{
+    width: calc(100%);
+    @include at-least($large-mobile) {
+        width: calc(70% - 16px);
+    }
+    margin: 8px;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content:  space-between;
+    align-items: center;
+    &__detail{
+      font-weight: 100;
+      text-align:center;
+      width: calc(100% / 3);
+    }
+    &__title{
+      width: 100%;
+    text-align: center;
+    font-size: 32px;
+    @include at-least($large-mobile) {
+      font-size: 64px;
+    }
+    text-transform: uppercase;
+    }
+    .likes,
+    .selfies,
+    .views{font-weight: 100}
+    .likes:before,
+    .selfies:before,
+    .views:before
+    {
+      @extend .material-icons;
+      display: block;
+      margin: 0 auto;
+      font-size: 32px;
+      @include at-least($large-mobile) {
+        font-size: 64px;
+      }
+      color: #7A339B;
+      font-weight: 100;
+     content: "favorite";
+    }
+    .selfies:before{ content: "face";}
+    .views:before{ content: "visibility";}
+  }
+
+}
