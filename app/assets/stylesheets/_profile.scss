@@ -1,6 +1,7 @@
 .profile-card{
   display:flex;
-  width: 100%;
+width: calc(100% - 16px);
+margin: 8px;
   flex-flow: row wrap;
   box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
   border-radius: 2px;
@@ -28,7 +29,7 @@ color: #7a339b;
     }
   }
   &__meta{
-    width: calc(100%);
+    width: calc(100% - 16px);
     @include at-least($large-mobile) {
         width: calc(70% - 16px);
     }

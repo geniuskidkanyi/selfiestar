@@ -60,9 +60,9 @@ width: 100%;
   }
 }
 .grid-title {
-  width: 100%;
+    width: calc(100% - 16px);
   padding: 0 8px;
-  margin: 8px auto;
+  margin: 8px;
     text-align: center;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
