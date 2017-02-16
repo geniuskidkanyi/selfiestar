@@ -61,7 +61,7 @@ width: 100%;
 }
 .grid-title {
     width: calc(100% - 16px);
-  padding: 0 8px;
+  padding: 0 0px;
   margin: 8px;
     text-align: center;
     background-color: white;
@@ -72,6 +72,7 @@ width: 100%;
 .grid-title-text {
   font-size:36px;
   line-height: 72px;
+  margin: 8px;
 }
 
 .text_container {
@@ -79,4 +80,8 @@ width: 100%;
     max-width: 960px;
     margin: 0 auto;
     font-weight: 400;
+}
+.main-carousel__card{
+  width: calc(100% - 16px);
+    margin: 8px;
 }

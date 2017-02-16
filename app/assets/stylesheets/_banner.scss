@@ -1,5 +1,5 @@
 .banner {
-  width: 100%;
+  width: calc(100% - 16px );
   margin:auto;
   background-color: $brand;
   color: white;
