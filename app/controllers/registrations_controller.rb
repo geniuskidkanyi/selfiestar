@@ -28,4 +28,10 @@ class RegistrationsController < Devise::RegistrationsController
   def update
     super
   end
+
+  protected
+
+  def update_resource(resource, params)
+   resource.update_without_password(params.except(:current_password))
+ end
 end

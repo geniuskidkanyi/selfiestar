@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   private
 def configure_permitted_parameters
 devise_parameter_sanitizer.permit(:sign_up, keys: [:country_code, :phone_number, :username, :avatar])
-devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_number, :username, :avatar])
+devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_number, :username, :avatar, :current_password])
+devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_number, :username, :avatar])
 end
 # def authenticate_user!
 #     if user_signed_in?

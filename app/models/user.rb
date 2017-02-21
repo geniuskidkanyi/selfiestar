@@ -52,7 +52,8 @@ class User < ApplicationRecord
     end
     def self.send_reset_password_instructions attributes = {}
       recoverable = find_recoverable_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
-      recoverable.send_reset_password_instructions if recoverable.persisted?
+      pry.binding
+      recoverable.send_reset_password_instructions
       recoverable
     end
 
