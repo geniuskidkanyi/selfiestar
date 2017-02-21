@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   authenticated :user do
   #  get '/home', to: 'pages#home', as: :authenticated_root
    root 'pages#home', as: :authenticated_root
@@ -7,9 +11,11 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'upload' => 'pages#upload'
   get 'about' => 'pages#about'
+  get 'token' => 'password_resets#token'
+  post 'find_token' => 'password_resets#find_token'
   get 'profile/:id' => 'pages#profile', as: 'profile'
   get "/fetch_selfie/:id" => 'selfies#show', as: 'fetch_selfy'
-
+  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :selfies do
     resource :like, module: :selfies
     resources :comments, module: :selfies

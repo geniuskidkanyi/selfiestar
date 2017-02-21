@@ -2,7 +2,7 @@ require 'twilio-ruby'
 class User < ApplicationRecord
       mount_uploader :avatar, PhotoUploader
     devise :two_factor_authenticatable, :database_authenticatable, :registerable,
-           :recoverable, :rememberable, :trackable, :validatable
+          :rememberable, :trackable, :validatable
     def email_required?
         false
     end
@@ -11,7 +11,7 @@ class User < ApplicationRecord
         false
     end
     # attr_accessible :username
-    attr_accessor :login
+    attr_accessor :login, :reset_token
     # attr_accessible :login
     has_one_time_password(encrypted: true)
     def self.find_for_database_authentication(warden_conditions)
@@ -41,6 +41,27 @@ class User < ApplicationRecord
         selfy.likes.where(user_id: id).any?
     end
 
+    # Sets the password reset attributes.
+    def create_reset_digest
+      totp = ROTP::TOTP.new("base32secret3232")
+    self.reset_token = totp.now
+    update_attribute(:reset_password_token, self.reset_token)
+    update_attribute(:reset_password_sent_at, Time.zone.now)
+    end
+
+    def send_password_reset_sms
+      number = '+220' + phone_number
+      client.messages.create(
+          from: '+12674607667',
+          to: number,
+          body: self.reset_token
+      )
+      logger.info 'Code sent.'
+    end
+    # Returns true if a password reset has expired.
+    def password_reset_expired?
+    reset_password_sent_at < 1.hours.ago
+    end
     private
 
     def client
@@ -57,32 +78,7 @@ class User < ApplicationRecord
       recoverable
     end
 
-    def self.find_recoverable_or_initialize_with_errors required_attributes, attributes, error = :invalid
-      (case_insensitive_keys || []).each {|k| attributes[k].try(:downcase!)}
 
-      attributes = attributes.slice(*required_attributes)
-      attributes.delete_if {|_key, value| value.blank?}
-
-      if attributes.size == required_attributes.size
-        if attributes.key?(:login)
-          login = attributes.delete(:login)
-          record = find_record(login)
-        else
-          record = where(attributes).first
-        end
-      end
-
-      unless record
-        record = new
-
-        required_attributes.each do |key|
-          value = attributes[key]
-          record.send("#{key}=", value)
-          record.errors.add(key, value.present? ? error : :blank)
-        end
-      end
-      record
-    end
 
     def self.find_record login
       where(["username = :value", {value: login}]).first

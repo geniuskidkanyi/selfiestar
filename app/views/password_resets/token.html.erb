@@ -1,0 +1,8 @@
+<% provide(:title, "Enter token") %>
+
+<%= form_for(:password_reset, url: find_token_path,html: {class: "card login-card" } ) do |f| %>
+<h1>Enter token</h1>
+<%= f.label "token", class: "label"  %>
+<%= f.text_field :reset_password_token, class: 'input' %>
+<%= f.submit "Submit", class: "btn " %>
+<% end %>
