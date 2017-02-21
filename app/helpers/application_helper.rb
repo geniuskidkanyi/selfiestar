@@ -19,6 +19,7 @@ module ApplicationHelper
         type = type.to_sym
         type = :success if type == :notice
         type = :error   if type == :alert
+        type = :error   if type == :danger
         text = "<script>toastr.#{type}('#{message}');</script>"
         flash_messages << text.html_safe if message
       end
