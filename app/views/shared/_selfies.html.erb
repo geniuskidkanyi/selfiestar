@@ -22,13 +22,13 @@
     <!-- .card-main -->
     <div class="card-footer">
         <div class="card-footer-avatar">
-          <%= link_to  profile_path(selfie.user.id) do %>
+          <%= link_to  user_path(selfie.user.username) do %>
           <%= gravatar_for selfie.user %>
           <% end %>
         </div>
         <!-- .card-footer-avater -->
         <div class="card-footer-text">
-            <a href="#" class="card-footer-title">  <%= link_to selfie.user.username,  profile_path(selfie.user.id)  %></a>
+            <a href="#" class="card-footer-title">  <%= link_to selfie.user.username,  user_path(selfie.user.username)  %></a>
             <div class="card-footer-info">
 
                 <div class="card-footer-likes" id="<%= selfie.id %>_counter"><%= selfie.likes.count %></div>

@@ -3,7 +3,7 @@
      <div class="comment">
     <header class="comment__header">
       <div class="comment__author">
-        <%= link_to comment.user.username,  profile_path(comment.user.id)  %>
+        <%= link_to comment.user.username,  user_path(comment.user.username)  %>
 
       </div>
       <div class="comment__time"><%= time_ago_in_words(comment.created_at) %> ago</div>

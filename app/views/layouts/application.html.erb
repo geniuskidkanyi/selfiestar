@@ -23,7 +23,7 @@
                     </li>
                     <% if user_signed_in? %>
                     <li>
-                      <%= link_to "Profile", profile_path(current_user.id), class: "profile_link" %>
+                      <%= link_to "Profile", user_path(current_user.username), class: "profile_link" %>
 
                     </li>
                     <li>

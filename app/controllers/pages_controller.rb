@@ -6,8 +6,9 @@ class PagesController < ApplicationController
   end
   def home
     @selfies = Selfy.all.order(created_at: :desc)
-
+    # binding.pry
     @week_trendings = trending_wide
+
     @width = "home"
 
   end
@@ -18,9 +19,10 @@ class PagesController < ApplicationController
     #code
   end
   def profile
-    @user = User.find(params[:id])
+    @user = User.find_by_username(params[:username])
     @width = "profile"
     @week_trendings = trending
+
     @selfies = @user.selfies.all.order(created_at: :desc)
   end
 

@@ -1,6 +1,9 @@
 <div class="profile-card">
 <div class="profile-card__img">  <%= gravatar_user @user %>
-<%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+  <% if @user == current_user %>
+    <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+  <% end %>
+
 </div>
 <div class="profile-card__meta">
 <div class="profile-card__meta__title">
