@@ -34,9 +34,10 @@ class PagesController < ApplicationController
     top.order("COALESCE(likes_count, 0) DESC").limit(6)
   end
 def trending_wide
+  # binding.pry
   date = DateTime.now.utc
   likes = Like.where('created_at >= ? and created_at <= ?', date.beginning_of_week, date.utc.end_of_week).select(:selfy_id)
-  top = Selfy.where(id: likes)
+  top = Selfy.where(id: likes, created_at: Time.current.all_week)
   top.order("COALESCE(likes_count, 0) DESC").limit(6)
 end
 
