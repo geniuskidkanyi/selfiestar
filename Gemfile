@@ -37,6 +37,7 @@ gem 'toastr-rails'
 gem 'carrierwave-processing'
 gem 'rmagick'
 gem 'carrierwave-imageoptimizer'
+gem "whenever"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
