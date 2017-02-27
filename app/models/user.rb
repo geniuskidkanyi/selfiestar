@@ -22,6 +22,7 @@ class User < ApplicationRecord
     # devise end
     has_many :likes
     has_many :selfies
+    has_many :winners
     has_many :comments
     validates :username, presence: true, uniqueness: true
     validates :phone_number, presence: true, uniqueness: true

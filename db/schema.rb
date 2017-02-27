@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224111903) do
+ActiveRecord::Schema.define(version: 20170227104425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20170224111903) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "users"
+    t.string   "username"
     t.string   "encrypted_password",            default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -80,7 +82,6 @@ ActiveRecord::Schema.define(version: 20170224111903) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
-    t.string   "username"
     t.integer  "second_factor_attempts_count",  default: 0
     t.string   "encrypted_otp_secret_key"
     t.string   "encrypted_otp_secret_key_iv"
@@ -93,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170224111903) do
     t.string   "avatar"
     t.index ["encrypted_otp_secret_key"], name: "index_users_on_encrypted_otp_secret_key", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
   create_table "winners", force: :cascade do |t|
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(version: 20170224111903) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "likes"
+    t.string   "views"
     t.index ["selfy_id"], name: "index_winners_on_selfy_id", using: :btree
     t.index ["user_id"], name: "index_winners_on_user_id", using: :btree
   end

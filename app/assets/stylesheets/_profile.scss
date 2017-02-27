@@ -55,9 +55,11 @@ color: #7a339b;
     }
     .likes,
     .selfies,
+    .date,
     .views{font-weight: 100}
     .likes:before,
     .selfies:before,
+    .date:before,
     .views:before
     {
       @extend .material-icons;
@@ -73,6 +75,7 @@ color: #7a339b;
     }
     .selfies:before{ content: "face";}
     .views:before{ content: "visibility";}
+    .date:before{ content: "date_range";}
   }
 
 }

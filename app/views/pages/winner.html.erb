@@ -1,0 +1,30 @@
+<% provide(:title, "winners") %>
+<div class="grid-title">
+  <h2 class="grid-title-text">
+  Winners
+  </h2>
+</div>
+<% @winners.each do |winner| %>
+<div class="profile-card">
+<div class="profile-card__img">  <img class="card-main-image" src="<%= winner.selfy.photo.url if winner.selfy.photo.url  %>" alt="Image Alt text">
+
+
+</div>
+<div class="profile-card__meta">
+<div class="profile-card__meta__title">
+<%= winner.user.username %>
+</div>
+  <div class="profile-card__meta__detail">
+  <h3 class="date">  <%= winner.created_at.to_date %></h3>
+  </div>
+  <div class="profile-card__meta__detail">
+  <h3 class="likes">  <%= winner.likes %> likes </h3>
+  </div>
+  <div class="profile-card__meta__detail">
+  <h3 class="views">views</h3>
+  <%= winner.views %>
+  </div>
+  </div>
+</div>
+
+<% end %>

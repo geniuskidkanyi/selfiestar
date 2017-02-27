@@ -15,6 +15,10 @@ class PagesController < ApplicationController
   def upload
     @selfie = Selfy.new
   end
+
+  def winner
+    @winners = Winner.all
+  end
   def about
     #code
   end

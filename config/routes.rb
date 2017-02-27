@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'upload' => 'pages#upload'
   get 'about' => 'pages#about'
+  get 'winners' => 'pages#winner'
   get 'token' => 'password_resets#token'
   post 'find_token' => 'password_resets#find_token'
   get ':username' => 'pages#profile', as: :user

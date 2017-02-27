@@ -5,5 +5,6 @@ class Selfy < ApplicationRecord
 
     belongs_to :user
     has_many :likes
+    has_many :winners
     has_many :comments
 end

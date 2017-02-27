@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= yield(:title) %> Selfiestar</title>
+        <title><%= full_title(yield(:title)) %>Selfiestar</title>
         <%= csrf_meta_tags %>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -50,6 +50,7 @@
                     <h4>SelfieStar</h4>
                     <ul class="footer_menu">
                         <li><a href="/about">About</a></li>
+                        <li><%= link_to "winners", winners_path %></li>
 
                     </ul>
                 </div>
