@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, :only => [:upload, :profile]
   def index
-    @selfies = Selfy.paginate(:page => params[:page], :per_page => 10).order(created_at: :desc)
+    @selfies = Selfy.paginate(:page => params[:page], :per_page => 20).order(created_at: :desc)
 
   end
   def home
-    @selfies = Selfy.paginate(:page => params[:page], :per_page => 10).order(created_at: :desc)
+    @selfies = Selfy.paginate(:page => params[:page], :per_page => 20).order(created_at: :desc)
     # binding.pry
     @week_trendings = trending_wide
 
@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def winner
-    @winners = Winner.paginate(:page => params[:page], :per_page => 10)
+    @winners = Winner.paginate(:page => params[:page], :per_page => 20)
   end
   def about
     #code

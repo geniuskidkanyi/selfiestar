@@ -8,7 +8,7 @@ env :PATH, ENV['PATH']
 #
 set :output, "log/cron_log.log"
 #
- every 2.minutes do
+ every 1.day, :at => '9:30 am'  do
 #   command "/usr/bin/some_great_command"
   #  runner "Winner.create"
   rake "winner:create_winner"
