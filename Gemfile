@@ -24,10 +24,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
-gem 'dropzonejs-rails'
 gem 'pry'
 gem 'impressionist'
-gem 'groupdate'
 gem 'pg'
 gem 'two_factor_authentication', github: 'Houdini/two_factor_authentication'
 gem 'rotp', '>= 3.2.0'
@@ -38,6 +36,7 @@ gem 'carrierwave-processing'
 gem 'rmagick'
 gem 'carrierwave-imageoptimizer'
 gem "whenever"
+gem 'will_paginate', '~> 3.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

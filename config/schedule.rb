@@ -10,8 +10,8 @@ set :output, "log/cron_log.log"
 #
  every 2.minutes do
 #   command "/usr/bin/some_great_command"
-   runner "Winner.create"
-#   rake "some:great:rake:task"
+  #  runner "Winner.create"
+  rake "winner:create_winner"
  end
 #
 # every 4.days do
