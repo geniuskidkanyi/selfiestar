@@ -32,7 +32,7 @@ $(document).on('ready turbolinks:load', function() {
   }
 
   $("#avatar-upload").change(function(){
-    $('#img_prev').removeClass('hidden');
+    $('.img_prev').removeClass('hidden');
     readURL(this);
   });
   $('.main-carousel').flickity({

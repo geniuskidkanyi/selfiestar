@@ -4,7 +4,8 @@
 
 <div class="">
   <%= f.label :photo, class: "label" %>
-  <img id="img_prev" width=300 height=300 src="#" alt="your image" class="img-thumbnail hidden"/>
+  <div class="img_prev hidden img-thumbnail"><img id="img_prev" src="#" alt="your image" class=""/></div>
+
   <%= f.hidden_field :photo_cache %>
   <%= f.file_field :photo, id: "avatar-upload", class: "fileupload" %>
 </div>

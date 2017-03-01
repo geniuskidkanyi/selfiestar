@@ -40,6 +40,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'ahoy_matey'
 gem "chartkick"
 gem 'groupdate'
+gem "autoprefixer-rails"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
