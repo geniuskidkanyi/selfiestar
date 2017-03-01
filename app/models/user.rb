@@ -24,6 +24,7 @@ class User < ApplicationRecord
     has_many :selfies
     has_many :winners
     has_many :comments
+    has_many :visits
     validates :username, presence: true, uniqueness: true
     validates :phone_number, presence: true, uniqueness: true
 
@@ -33,7 +34,7 @@ class User < ApplicationRecord
         client.messages.create(
             from: '+12674607667',
             to: number,
-            body: "Your login code on Selfiestar: #{code} " 
+            body: "Your login code on Selfiestar: #{code} "
         )
         logger.info 'Code sent.'
      end

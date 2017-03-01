@@ -49,10 +49,24 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
+    ahoy_matey (1.5.4)
+      addressable
+      browser (~> 2.0)
+      geocoder
+      rack-attack (< 6)
+      railties
+      referer-parser (>= 0.3.0)
+      request_store
+      safely_block (>= 0.1.1)
+      user_agent_parser
+      uuidtools
     airbrussh (1.1.2)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
     bcrypt (3.1.11)
+    browser (2.3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.7.2)
@@ -82,6 +96,7 @@ GEM
       image_optimizer (~> 1.6)
     carrierwave-processing (1.1.0)
       carrierwave
+    chartkick (2.2.3)
     chronic (0.10.2)
     coderay (1.1.1)
     coffee-rails (4.2.1)
@@ -100,13 +115,17 @@ GEM
       responders
       warden (~> 1.2.3)
     encryptor (3.0.0)
+    errbase (0.0.3)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.7.2)
       i18n (~> 0.5)
     ffi (1.9.17)
+    geocoder (1.4.3)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     i18n (0.8.0)
     image_optimizer (1.7.0)
     impressionist (1.5.2)
@@ -145,8 +164,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.5)
     puma (3.7.0)
     rack (2.0.1)
+    rack-attack (5.0.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.1)
@@ -177,10 +199,14 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    referer-parser (0.3.0)
+    request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rmagick (2.16.0)
     rotp (3.3.0)
+    safely_block (0.2.0)
+      errbase
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -221,6 +247,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    user_agent_parser (2.3.0)
+    uuidtools (2.1.5)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -239,6 +267,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ahoy_matey
   byebug
   capistrano (~> 3.7, >= 3.7.1)
   capistrano-passenger (~> 0.2.0)
@@ -247,9 +276,11 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   carrierwave-imageoptimizer
   carrierwave-processing
+  chartkick
   coffee-rails (~> 4.2)
   devise
   faker
+  groupdate
   impressionist
   jbuilder (~> 2.5)
   jquery-rails
@@ -276,4 +307,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.13.1
+   1.14.5

@@ -1,0 +1,7 @@
+<div class="dash-card">
+<%= area_chart Visit.group_by_minute(:started_at).maximum(:started_at) %>
+</div>
+
+<div class="dash-card">
+  <%= line_chart User.group_by_day(:created_at).count %>
+</div>

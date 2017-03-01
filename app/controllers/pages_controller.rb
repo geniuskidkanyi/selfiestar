@@ -15,7 +15,6 @@ class PagesController < ApplicationController
   def upload
     @selfie = Selfy.new
   end
-
   def winner
     @winners = Winner.paginate(:page => params[:page], :per_page => 20).order(created_at: :desc)
   end

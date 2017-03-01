@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+end
 def configure_permitted_parameters
 devise_parameter_sanitizer.permit(:sign_up, keys: [:country_code, :phone_number, :username, :avatar])
 devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_number, :username, :avatar, :current_password])

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/dashboard'
+
   devise_scope :user do
  get "/signup" => "devise/registrations#new", as: "new_user_registration"
     end
