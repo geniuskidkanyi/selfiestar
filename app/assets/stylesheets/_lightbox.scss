@@ -46,7 +46,7 @@
 
         &_image {
             width: 66.6%;
-            padding-bottom: 66.6%;
+
             position:relative;
 
               &:after{
@@ -93,7 +93,7 @@
   overflow-y: scroll;
   margin: auto;
   background-color: #F1F0EA;
-  padding: 8px 0;
+
     @include scrolling-shadows(#F4F5F7);
 }
 .comment {
