@@ -8,3 +8,8 @@
 <div class="dash-card">
   <%= geo_chart Visit.group(:country).count %>
 </div>
+
+<div class="dash-card">
+  <h1 class="count-user">  <%= User.all.count %> happy users and counting</h1>
+
+</div>
