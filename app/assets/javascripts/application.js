@@ -18,7 +18,7 @@
 //= require turbolinks
 //= require toastr
 //= require_tree .
-ahoy.trackAll();
+
 $(document).on('ready turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {

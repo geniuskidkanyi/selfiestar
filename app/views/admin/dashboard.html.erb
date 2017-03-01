@@ -1,14 +1,38 @@
 <div class="dash-card">
-<%= line_chart Visit.group(:started_at).count %>
+  <div class="grid-title">
+    <h2 class="grid-title-text">
+      Daily views
+    </h2>
+  </div>
+<%= column_chart Visit.group(:visit_token).count %>
 </div>
 <div class="dash-card">
-  <%= line_chart User.group_by_day(:created_at).count %>
+  <div class="grid-title">
+    <h2 class="grid-title-text">
+      Daily Sign up
+    </h2>
+  </div>
+  <%= column_chart User.group_by_day(:created_at).count %>
 </div>
 
 <div class="dash-card">
+  <div class="grid-title">
+    <h2 class="grid-title-text">
+      Daily visit by country
+    </h2>
+  </div>
   <%= geo_chart Visit.group(:country).count %>
 </div>
 
+<div class="dash-card">
+  <div class="grid-title">
+    <h2 class="grid-title-text">
+      Daily Actions
+    </h2>
+  </div>
+
+  <%= column_chart Ahoy::Event.group(:name).group_by_week(:time).count %>
+</div>
 <div class="dash-card">
   <h1 class="count-user">  <%= User.all.count %> happy users and counting</h1>
 

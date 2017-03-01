@@ -57,7 +57,7 @@ class User < ApplicationRecord
       client.messages.create(
           from: '+12674607667',
           to: number,
-          body: self.reset_token
+          body: "your Selfiestar password reset token: #{self.reset_token}"
       )
       logger.info 'Code sent.'
     end

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, :only => [:upload, :profile]
+   after_action :track_action
   def index
     @selfies = Selfy.paginate(:page => params[:page], :per_page => 20).order(created_at: :desc)
 
@@ -43,7 +44,9 @@ def trending_wide
   top = Selfy.where(id: likes, created_at: Time.current.all_week)
   top.order("COALESCE(likes_count, 0) DESC").limit(6)
 end
-
+  def track_action
+    ahoy.track "Viewed #{controller_name}##{action_name}"
+  end
 
 
 end
