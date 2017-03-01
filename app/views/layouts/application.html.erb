@@ -17,7 +17,7 @@
             <div class="header-container">
                 <a href="/" class="logo">SelfieStar</a>
                 <ul class="menu">
-                <% if current_user.admin? %>
+                <% if current_user.try(:admin?) %>
                     <%= link_to "Dashboard", admin_dashboard_path, class: "upload_link" %>
                 <% end %>
                     <li>
