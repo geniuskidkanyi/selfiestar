@@ -33,7 +33,7 @@ class User < ApplicationRecord
         client.messages.create(
             from: '+12674607667',
             to: number,
-            body: code
+            body: "Your login code on Selfiestar: #{code} " 
         )
         logger.info 'Code sent.'
      end

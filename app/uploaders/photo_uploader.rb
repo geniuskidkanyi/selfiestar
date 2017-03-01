@@ -6,12 +6,12 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
 
 
-    process :convert => 'png'
+
     process :auto_orient # Rotate the image if it has orientation data
     process :resize_to_fit => [612, 792]
-    process optimize: [{ quiet: true, quality: 50  }]
+    process optimize: [{ quiet: true, quality: 90  }]
     storage :file
-    
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
