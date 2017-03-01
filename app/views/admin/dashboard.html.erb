@@ -1,7 +1,10 @@
 <div class="dash-card">
-<%= line_chart Visit.group_by_day(:started_at).count %>
+<%= line_chart Visit.group(:started_at).count %>
+</div>
+<div class="dash-card">
+  <%= line_chart User.group_by_day(:created_at).count %>
 </div>
 
 <div class="dash-card">
-  <%= line_chart User.group_by_day(:created_at).count %>
+  <%= geo_chart Visit.group(:country).count %>
 </div>
