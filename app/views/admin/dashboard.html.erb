@@ -4,7 +4,7 @@
       Daily views
     </h2>
   </div>
-<%= bar_chart Visit.group(:browser).group_by_week(:started_at).count %>
+<%= pie_chart Visit.group(:browser).count %>
 </div>
 <div class="dash-card">
   <div class="grid-title">
