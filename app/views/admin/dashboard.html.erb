@@ -4,7 +4,7 @@
       Daily views
     </h2>
   </div>
-<%= column_chart Visit.group(:visit_token).count %>
+<%= bar_chart Visit.group(:browser).group_by_week(:started_at).count %>
 </div>
 <div class="dash-card">
   <div class="grid-title">
@@ -31,7 +31,7 @@
     </h2>
   </div>
 
-  <%= column_chart Ahoy::Event.group(:name).group_by_week(:time).count %>
+  <%= line_chart Ahoy::Event.group(:name).group_by_week(:time).count %>
 </div>
 <div class="dash-card">
   <h1 class="count-user">  <%= User.all.count %> happy users and counting</h1>
