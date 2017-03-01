@@ -3,6 +3,7 @@ class User < ApplicationRecord
       mount_uploader :avatar, PhotoUploader
     devise :two_factor_authenticatable, :database_authenticatable, :registerable,
           :rememberable, :trackable, :validatable
+    before_save { self.username = username.downcase }
     def email_required?
         false
     end
