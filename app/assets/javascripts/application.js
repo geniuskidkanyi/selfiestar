@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require ahoy
-//= require Chart.bundle
-//= require chartkick
+
 //= require jquery_ujs
 //= require turbolinks
 //= require toastr
