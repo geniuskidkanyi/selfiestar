@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require ahoy
+
 
 //= require jquery_ujs
 //= require turbolinks
