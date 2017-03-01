@@ -1,15 +1,9 @@
 class PhotoUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
-  include CarrierWave::Processing::RMagick
-  include CarrierWave::ImageOptimizer
-  # Choose what kind of storage to use for this uploader:
-
-
-
-
+include CarrierWave::MiniMagick
+  include CarrierWave::BombShelter
     process :auto_orient # Rotate the image if it has orientation data
     process :resize_to_fit => [612, 792]
-    process optimize: [{ quiet: true, quality: 90  }]
+    process :optimize
     storage :file
 
   # Override the directory where uploaded files will be stored.
@@ -32,7 +26,23 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
+  def optimize
+    manipulate! do |img|
+        return img unless img.mime_type.match /image\/jpeg/
+        img.strip
+        img.combine_options do |c|
+            c.quality "80"
+            c.depth "8"
+            c.interlace "plane"
+        end
+        img
+    end
+  end
+  def auto_orient
+  manipulate! do |img|
+     img.auto_orient
+   end
+ end
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

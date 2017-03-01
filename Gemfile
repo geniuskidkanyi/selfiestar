@@ -32,15 +32,15 @@ gem 'rotp', '>= 3.2.0'
 gem 'twilio-ruby', '~> 4.11.1'
 gem "sprockets",'~> 3.0', '>= 3.5'
 gem 'toastr-rails'
-gem 'carrierwave-processing'
 gem 'rmagick'
-gem 'carrierwave-imageoptimizer'
 gem "whenever"
 gem 'will_paginate', '~> 3.1.0'
 gem 'ahoy_matey'
 gem "chartkick"
 gem 'groupdate'
 gem "autoprefixer-rails"
+gem 'mini_magick'
+gem 'carrierwave-bombshelter'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -63,8 +63,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'capistrano', '~> 3.7', '>= 3.7.1'
-gem 'capistrano-rails', '~> 1.2'
-gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
 
 # Add this if you're using rbenv
   gem 'capistrano-rbenv', '~> 2.1'
