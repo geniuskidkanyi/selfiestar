@@ -11,22 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-
-
+//= require ahoy
+//= require Chart.bundle
+//= require chartkick
 //= require jquery_ujs
 //= require turbolinks
 //= require toastr
 //= require_tree .
-$(document).on('ready page:change', =>
-  # These methods call document.on('event') and should not be called
-  # more than once per lifecycle of document.
-  unless window.ahoyDocumentEventTrackersInitialized
-
-    window.ahoyDocumentEventTrackersInitialized = true
-
-  # Should be called once per page load.
-    ahoy.trackAll();
-)
+ahoy.trackAll();
 $(document).on('ready turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {
