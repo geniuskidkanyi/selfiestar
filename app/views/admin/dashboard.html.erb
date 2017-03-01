@@ -1,5 +1,5 @@
 <div class="dash-card">
-<%= area_chart Visit.group_by_minute(:started_at).maximum(:started_at) %>
+<%= line_chart Visit.group_by_day(:started_at).count %>
 </div>
 
 <div class="dash-card">
