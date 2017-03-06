@@ -32,4 +32,7 @@ module ApplicationHelper
       end
       flash_messages.join("n").html_safe
   end
+  def current_user?(user)
+      user == current_user
+  end
 end

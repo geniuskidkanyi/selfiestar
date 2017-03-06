@@ -45,8 +45,11 @@
         }
 
         &_image {
-            width: 66.6%;
-
+            width: 100%;
+            @include at-least($tablet)
+            {
+              width: 66.6%;
+            };
             position:relative;
 
               &:after{
@@ -68,7 +71,7 @@
         }
 
         &_meta {
-            width: 100%;
+          width: 100%;
 
             @include at-least($tablet) {
               width: calc(100% / 3);
@@ -105,16 +108,13 @@
   background-color: #ffffff;
   border-radius: 4px;
   border-bottom: 2px solid #7a339b;
-}
-
-.comment__header {
+&__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 16px
 }
-
-.comment__author {
+&__author {
   a {
     text-decoration: none;
     font-weight: 700;
@@ -123,18 +123,21 @@
     line-height: 16px;
   }
 }
-
-.comment__time {
+&__time {
   font-size: 14px;
   line-height: 14px;
   font-weight: 100;
 }
 
-.comment__body {
+&__body {
   padding: 0 8px;
   font-size: 14px;
   font-weight: 300;
   line-height: 19px;
+}
+&__mobile{
+
+}
 }
 .new_comment {
   width: 100%;
