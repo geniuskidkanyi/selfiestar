@@ -78,9 +78,7 @@
 
             @include at-least($tablet) {
               width: calc(100% / 3);
-
-              // height: 0;
-              // padding-bottom: calc((100% / 3) * 2);
+              transform: scaleY(1);
               position: relative;
             }
 
