@@ -12,7 +12,7 @@
       Daily Sign up
     </h2>
   </div>
-  <%= column_chart User.group_by_day(:created_at).count %>
+  <%= column_chart User.group_by_day(:created_at, format: "%B %d").count %>
 </div>
 
 <div class="dash-card">
