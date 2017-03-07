@@ -75,6 +75,7 @@
           transition: transform .3s;
           @include until($tablet){
             transform: scaleY(0);
+            height: 0;
           };
 
             @include at-least($tablet) {
