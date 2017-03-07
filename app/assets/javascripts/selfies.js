@@ -23,7 +23,7 @@ $(document).on('ready turbolinks:load', function () {
 
         $('.lightbox_container_image img').attr('src', src);
         $('.lightbox').show().animateCss('fadeIn');
-
+        $('body').addClass('noscroll');
     });
 
     $('.lightbox').not($('.lightbox_container')).on('click', function (e) {
@@ -31,5 +31,6 @@ $(document).on('ready turbolinks:load', function () {
         e.preventDefault();
         e.stopPropagation();
         $(this).animateCss('fadeOut', true);
+        $('body').removeClass('noscroll');
     });
 });

@@ -87,7 +87,10 @@
         }
     }
 }
-
+.noscroll{
+  overflow-x: hidden;
+      overflow-y: auto;
+}
 .show {
     display: block;
 }
