@@ -4,6 +4,7 @@ class User < ApplicationRecord
     devise :two_factor_authenticatable, :database_authenticatable, :registerable,
           :rememberable, :trackable, :validatable
     before_save { self.username = username.downcase }
+    has_one_time_password(encrypted: true)
     def email_required?
         false
     end
@@ -21,10 +22,10 @@ class User < ApplicationRecord
         where(conditions).where(['lower(username) = :value', { value: login.strip.downcase }]).first
     end
     # devise end
-    has_many :likes
-    has_many :selfies
-    has_many :winners
-    has_many :comments
+    has_many :likes,dependent: :destroy
+    has_many :selfies, dependent: :destroy
+    has_many :winners, dependent: :destroy
+    has_many :comments, dependent: :destroy
     has_many :visits
     validates :username, presence: true, uniqueness: true
     validates :phone_number, presence: true, uniqueness: true

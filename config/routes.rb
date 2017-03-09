@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
  get "/signup" => "devise/registrations#new", as: "new_user_registration"
     end
- devise_for :users, skip: [:sessions],:controllers => {:registrations => "registrations"}
+ devise_for :users, skip: [:sessions] #,:controllers => {:registrations => "registrations"}
  as :user do
 
      get 'login' => 'devise/sessions#new', :as => :new_user_session

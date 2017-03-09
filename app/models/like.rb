@@ -1,3 +1,3 @@
 class Like < ApplicationRecord
-  belongs_to :selfy, counter_cache: true
+  belongs_to :selfy, counter_cache: true, dependent: :destroy
 end

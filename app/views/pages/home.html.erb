@@ -17,4 +17,5 @@
         </div>
   <%= render 'shared/selfies' %>
 </div><!-- .grid -->
-<%= will_paginate @selfies %>
+
+    <%= will_paginate  @selfies , :next_label => '', :previous_label => '' %>

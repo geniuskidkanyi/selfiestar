@@ -41,6 +41,7 @@ gem 'groupdate'
 gem "autoprefixer-rails"
 gem 'mini_magick'
 gem 'carrierwave-bombshelter'
+gem 'will_paginate-materialize'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -48,12 +48,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:email]
+  config.case_insensitive_keys = [:username]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:email]
+  config.strip_whitespace_keys = [:username]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -277,7 +277,7 @@ Devise.setup do |config|
 config.allowed_otp_drift_seconds = 30  # Allowed TOTP time drift between client and server.
 config.otp_length = 4  # TOTP code length
 config.direct_otp_valid_for = 60.minutes  # Time before direct OTP becomes invalid
-config.direct_otp_length = 4  # Direct OTP code length
+config.direct_otp_length = 6  # Direct OTP code length
 config.remember_otp_session_for_seconds = 30.days  # Time before browser has to perform 2fA again. Default is 0.
 config.otp_secret_encryption_key = ENV['a2cf7744505b482c2dc9adb95f3353c66a4b3aed6381515ecb26cc875a1f2ba0c72d1638505e72a2748571095d0c38600efdf993262ff3c36df3e053b14a5da4']
 config.second_factor_resource_id = 'id' # Field or method name used to set value for 2fA remember cookie

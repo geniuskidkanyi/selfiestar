@@ -1,0 +1,36 @@
+.pagination{
+  display: flex;
+    margin: 0 auto;
+    line-height: 32px;
+    background-color: white;
+    color: $brand;
+    font-size: 16px;
+    a{
+      padding: 0 8px;
+      font-weight: 300;
+    }
+.current{
+  background-color: purple;
+    color: white;
+    font-weight: 300;
+      padding: 0 8px;
+}
+
+.next_page:before, .previous_page:before{
+  @extend .material-icons;
+  display: block;
+  text-indent: 0px;
+  padding: 0 8px;
+  font-weight: 700;
+  line-height: 25px;
+}
+.next_page:before{
+  content: ">";
+}
+.previous_page:before{
+  content: "<";
+}
+.disabled{
+  color: gray;
+}
+}
