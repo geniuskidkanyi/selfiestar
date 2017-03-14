@@ -1,5 +1,5 @@
 flexbox: no-2009
 browsers:
-  - "> 10%"
+  - "> 1%"
   - "last 2 versions"
   - "IE > 8"
