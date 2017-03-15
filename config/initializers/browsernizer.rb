@@ -10,7 +10,7 @@ Rails.application.config.middleware.use Browsernizer::Router do |config|
   config.supported "Samsung Internet", "3"
   config.supported "Android Browser", "4.0"
   config.supported "iOS Safari", "8.0"
-  config.supported "UC Browser", "12"
+  config.supported "UCBrowser",  false
   config.location  "/browser.html"
   config.exclude   %r{^/assets}
 end
