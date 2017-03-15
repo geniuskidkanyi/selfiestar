@@ -69,6 +69,8 @@ GEM
       execjs
     bcrypt (3.1.11)
     browser (2.3.0)
+    browsernizer (0.2.4)
+      browser (>= 2.0, < 3.0)
     builder (3.2.3)
     byebug (9.0.6)
     capistrano (3.8.0)
@@ -270,6 +272,7 @@ PLATFORMS
 DEPENDENCIES
   ahoy_matey
   autoprefixer-rails
+  browsernizer
   byebug
   capistrano (~> 3.7, >= 3.7.1)
   capistrano-passenger (~> 0.2.0)

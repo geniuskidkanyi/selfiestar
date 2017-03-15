@@ -13,6 +13,9 @@ class PagesController < ApplicationController
     @width = "home"
 
   end
+  def browser
+    render :layout => false
+  end
   def upload
     @selfie = Selfy.new
   end
