@@ -9,7 +9,8 @@ Rails.application.config.middleware.use Browsernizer::Router do |config|
   config.supported "Internet Explorer", "11"
   config.supported "Samsung Internet", "3"
   config.supported "Android Browser", "4.0"
-  config.supported "iOS Safari", "7.0"
+  config.supported "iOS Safari", "8.0"
+  config.supported "UC Browser for ", "12"
   config.location  "/browser.html"
   config.exclude   %r{^/assets}
 end
