@@ -1,4 +1,5 @@
 require 'ipaddr'
+require 'geoip'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -14,8 +15,9 @@ devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_
 devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_number, :username, :avatar])
 end
 def check_country
-  request_ip = IPAddr.new request.remote_ip # => Parse from text to IP Address
-  unless gambian_blocks.any? { |block| block.include?(request_ip) }
+  # pry.binding
+  ip = GeoIP.new(Rails.root.join("public/GeoIP.dat")).country(request.remote_ip)
+  unless ip.country_name == "Gambia"
     redirect_to subscribe_path
   end
 end
