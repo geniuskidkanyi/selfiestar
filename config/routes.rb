@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   root 'pages#index'
   get 'upload' => 'pages#upload'
+  get 'subscribe' => 'pages#subscribe'
   get 'browser'=> 'pages#browser'
   get 'about' => 'pages#about'
   get 'winners' => 'pages#winner'

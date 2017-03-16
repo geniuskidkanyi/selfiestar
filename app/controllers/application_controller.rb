@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :check_country
+  before_action :check_country, :except => [:subscribe]
 
   private
   def admin_user
@@ -13,8 +13,8 @@ devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_
 devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_number, :username, :avatar])
 end
 def check_country
-  if gambian_blocks.any? { |block| block.include?(request.remote_ip) }
-    redirect to: subscribe_path
+  unless gambian_blocks.any? { |block| block.include?(request.remote_ip) }
+    redirect_to subscribe_path
   end
 end
 def gambian_blocks
