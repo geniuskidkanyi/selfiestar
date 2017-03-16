@@ -13,7 +13,7 @@ devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_
 devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_number, :username, :avatar])
 end
 def check_country
-  unless gambian_blocks.any? { |block| block.include?(request.remote_ip) }
+  if gambian_blocks.any? { |block| block.include?(request.remote_ip) }
     redirect_to subscribe_path
   end
 end
