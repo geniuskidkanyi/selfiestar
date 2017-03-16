@@ -43,6 +43,7 @@ gem 'mini_magick'
 gem 'carrierwave-bombshelter'
 gem 'will_paginate-materialize'
 gem 'browsernizer'
+gem 'geoip'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
