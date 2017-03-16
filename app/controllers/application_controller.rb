@@ -1,3 +1,4 @@
+require 'ipaddr'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -13,8 +14,8 @@ devise_parameter_sanitizer.permit(:account_update, keys: [:country_code, :phone_
 devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_number, :username, :avatar])
 end
 def check_country
-  binding.pry
-  if gambian_blocks.any? { |block| block.include?(request.remote_ip) }
+  # binding.pry
+  unless gambian_blocks.any? { |block| block.include?(request.remote_ip) }
     redirect_to subscribe_path
   end
 end
