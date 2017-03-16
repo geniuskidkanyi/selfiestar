@@ -19,6 +19,7 @@ def check_country
     redirect_to subscribe_path
   end
 end
+
 def gambian_blocks
     %w{
       197.242.143.0/24
