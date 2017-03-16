@@ -15,7 +15,7 @@ devise_parameter_sanitizer.permit(:account_reset, keys: [:country_code, :phone_n
 end
 def check_country
   # binding.pry
-  if !gambian_blocks.any? { |block| block.include?(request.remote_ip) }
+  if !gambian_blocks.any? { |block| block.include?IPAddr.new(request.remote_ip) }
     redirect_to subscribe_path
   end
 end
