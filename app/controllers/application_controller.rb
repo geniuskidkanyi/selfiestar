@@ -16,7 +16,7 @@ end
 def check_country
   # binding.pry
   # unless gambian_blocks.any? { |block| block.include?IPAddr.new(request.remote_ip) }
-    if gambian_blocks.any? and !gambian_blocks.include?IPAddr.new(request.remote_ip)
+    unless gambian_blocks.any? and gambian_blocks.include?IPAddr.new(request.remote_ip)
     redirect_to subscribe_path
   end
 end
