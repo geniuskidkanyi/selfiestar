@@ -3,7 +3,7 @@ require 'geoip'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :check_country, :except => [:subscribe]
+  before_action :check_country
 
   private
   def admin_user
@@ -18,15 +18,8 @@ def check_country
   # pry.binding
   ip = GeoIP.new(Rails.root.join("public/GeoIP.dat")).country(request.remote_ip)
   unless ip.country_name == "Gambia"
-    redirect_to subscribe_path
+    redirect_to new_subscribe_path
   end
 end
 
-def gambian_blocks
-    %w{
-      197.242.143.0/24
-      197.255.207.0/24
-      212.60.95.0/24
-    }.map { |subnet| IPAddr.new subnet }
-  end
 end

@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 
   end
   def subscribe
-    
+    @subscribe = Subscribe.new
   end
   def browser
     render :layout => false

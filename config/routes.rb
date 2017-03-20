@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'upload' => 'pages#upload'
   get 'subscribe' => 'pages#subscribe'
+  resources :subscribes, only: [:create, :new]
   get 'browser'=> 'pages#browser'
   get 'about' => 'pages#about'
   get 'winners' => 'pages#winner'
